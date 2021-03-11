@@ -47,7 +47,6 @@ def Simulate(alpha,gamma,N, seed):
                 state=0
 
         elif state==1: #lead is 1
-            if i < 11: print("state 1")
             #The selfish pool has 1 hidden block.
             if r<=alpha:
                 if i < 11: print("selfish pool found a block")
@@ -66,7 +65,6 @@ def Simulate(alpha,gamma,N, seed):
                 state=-1
 
         elif state==-1: 
-            if i < 11: print("state -1")
             #There are two public branches of length 1 (0' in lecture)
             if r<=alpha:   
                 if i < 11: print("selfish pool found a block")
@@ -91,7 +89,6 @@ def Simulate(alpha,gamma,N, seed):
             state=0
 
         elif state==2:
-            if i < 11: print("state 2")
             #The selfish pool has 2 hidden block.
             if r<=alpha:
                 if i < 11: print("selfish pool found a block")
@@ -108,7 +105,6 @@ def Simulate(alpha,gamma,N, seed):
                 state=0
 
         elif state>2:
-            if i < 11: print("state ", state)
             # If lead > 2 and others win something (decrease the lead), which is still at least 2, they still obtain nothing
             # When the pool sees the new block coming from the public side, it reveals its block at the same height. 
             # Pool reveals the i-th block and obtains a revenue of 1.
