@@ -59,7 +59,7 @@ def Simulate(alpha,gamma,N, seed):
                 #The honest miners found a block. 
                 #Currently there are two branches of length 1. Pool publishes its single secret block. 
                 #Revenue will be determined later.
-                
+                ChainLength+=1
                 hidden=0
                 state=-1
 
@@ -79,13 +79,13 @@ def Simulate(alpha,gamma,N, seed):
                 # Others find a block after pool head
                 # Pool and others each obtain revenue 1
                 ChainLength+=1
-                SelfishRevenue+=1
+                #SelfishRevenue+=1
             else:
                 #print("honest miner found a block after others' head")
                 # Others find a block after others' head
                 # Pool gets nothing and others obtain a revenue of 2
                 ChainLength+=1
-                
+                SelfishRevenue+=1
             
             state=0
 
