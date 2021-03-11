@@ -102,7 +102,7 @@ def Simulate(alpha,gamma,N, seed):
                 ChainLength+=2
                 SelfishRevenue+=2
                 hidden=0
-                state=0
+                state=-1
 
         elif state>2:
             # If lead > 2 and others win something (decrease the lead), which is still at least 2, they still obtain nothing
