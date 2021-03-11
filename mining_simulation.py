@@ -53,6 +53,7 @@ def Simulate(alpha,gamma,N, seed):
                 #The selfish miners found a new block.
                 #Pool appends one block to its private branch, increasing its lead on the public branch by 1. 
                 #Revenue will be determined later.
+                ChainLength+=1
                 hidden=2
                 state=2
             else:
