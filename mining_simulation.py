@@ -73,6 +73,7 @@ def Simulate(alpha,gamma,N, seed):
                 ChainLength+=1
                 SelfishRevenue+=2
                 hidden=0
+                state=0
                 
             elif r<=alpha+(1-alpha)*gamma:
                 if i < 11: print("honest miner found a block after pool head")
@@ -80,13 +81,13 @@ def Simulate(alpha,gamma,N, seed):
                 # Pool and others each obtain revenue 1
                 ChainLength+=1
                 SelfishRevenue+=1
+                state=0
             else:
                 if i < 11: print("honest miner found a block after others' head")
                 # Others find a block after others' head
                 # Pool gets nothing and others obtain a revenue of 2
-                ChainLength+=1
+                state=0
             
-            state=-1
 
         elif state==2:
             #The selfish pool has 2 hidden block.
