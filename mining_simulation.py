@@ -118,7 +118,7 @@ def Simulate(alpha,gamma,N, seed):
                 hidden+=1
                 state+=1
             else:
-                print("honest miner found a block")
+                #print("honest miner found a block")
                 #The honest miners found a block
                 hidden=hidden-1
                 ChainLength+=1
