@@ -86,7 +86,7 @@ def Simulate(alpha,gamma,N, seed):
                 # Pool gets nothing and others obtain a revenue of 2
                 ChainLength+=1
             
-            state=0
+            state=-1
 
         elif state==2:
             #The selfish pool has 2 hidden block.
