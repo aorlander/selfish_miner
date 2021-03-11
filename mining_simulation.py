@@ -28,7 +28,7 @@ def Simulate(alpha,gamma,N, seed):
     #A round begin when the state=0
     for i in range(N):
         r=random.random()
-        #print("ROUND", i)
+        if i < 11: print("ROUND", i)
         if state==0: 
             #print("state 0")
             #The selfish pool has 0 hidden block.
@@ -45,17 +45,17 @@ def Simulate(alpha,gamma,N, seed):
                 state=0
 
         elif state==1: #lead is 1
-            #print("state 1")
+            if i < 11: print("state 1")
             #The selfish pool has 1 hidden block.
             if r<=alpha:
-                #print("selfish pool found a block")
+                if i < 11: print("selfish pool found a block")
                 #The selfish miners found a new block.
                 #Pool appends one block to its private branch, increasing its lead on the public branch by 1. 
                 #Revenue will be determined later.
                 hidden=2
                 state=2
             else:
-                #print("honest miner found a block")
+                if i < 11: print("honest miner found a block")
                 #The honest miners found a block. 
                 #Currently there are two branches of length 1. Pool publishes its single secret block. 
                 #Revenue will be determined later.
@@ -64,10 +64,10 @@ def Simulate(alpha,gamma,N, seed):
                 state=-1
 
         elif state==-1: 
-            #print("state -1")
+            if i < 11: print("state -1")
             #There are two public branches of length 1 (0' in lecture)
             if r<=alpha:   
-                #print("selfish pool found a block")
+                if i < 11: print("selfish pool found a block")
                 # Pool finds a block
                 # Pool publishes its secret branch of length 2. Pool obtains revenue of 2.
                 ChainLength+=1
@@ -75,13 +75,13 @@ def Simulate(alpha,gamma,N, seed):
                 hidden=0
                 
             elif r<=alpha+(1-alpha)*gamma:
-                #print("honest miner found a block after pool head")
+                if i < 11: print("honest miner found a block after pool head")
                 # Others find a block after pool head
                 # Pool and others each obtain revenue 1
                 ChainLength+=1
                 SelfishRevenue+=1
             else:
-                #print("honest miner found a block after others' head")
+                if i < 11: print("honest miner found a block after others' head")
                 # Others find a block after others' head
                 # Pool gets nothing and others obtain a revenue of 2
                 ChainLength+=1
@@ -89,14 +89,14 @@ def Simulate(alpha,gamma,N, seed):
             state=0
 
         elif state==2:
-            #print("state 2")
+            if i < 11: print("state 2")
             #The selfish pool has 2 hidden block.
             if r<=alpha:
-                #print("selfish pool found a block")
+                if i < 11: print("selfish pool found a block")
                 hidden=3
                 state=3
             else:
-                #print("honest miner found a block")
+                if i < 11: print("honest miner found a block")
                 #The honest miners found a block.
                 #Others find a block (close the gap, lead drops to 1), the pool publishes its private branch and the system drops to a lead of 0
                 #Pool obtains revenue of two
@@ -106,25 +106,25 @@ def Simulate(alpha,gamma,N, seed):
                 state=0
 
         elif state>2:
-            #print("state ", state)
+            if i < 11: print("state ", state)
             # If lead > 2 and others win something (decrease the lead), which is still at least 2, they still obtain nothing
             # When the pool sees the new block coming from the public side, it reveals its block at the same height. 
             # Pool reveals the i-th block and obtains a revenue of 1.
             if r<=alpha:
-                #print("selfish pool found a block")
+                if i < 11: print("selfish pool found a block")
                 #The selfish miners found a new block
                 hidden+=1
                 state+=1
             else:
-                #print("honest miner found a block")
+                if i < 11: print("honest miner found a block")
                 #The honest miners found a block
                 hidden=hidden-1
                 ChainLength+=1
                 SelfishRevenue+=1
                 state=2
 
-        #print("current: state= ", state, "// hidden= ", hidden, " // chain length", ChainLength, " // selfish revenue = ", SelfishRevenue)
-        #print(" ------------------------------------------------------------------------------------- ")
+        if i < 11: print("current: state= ", state, "// hidden= ", hidden, " // chain length", ChainLength, " // selfish revenue = ", SelfishRevenue)
+        if i < 11: print(" ------------------------------------------------------------------------------------- ")
 
     print(N)
     #print(float(SelfishRevenue)/ChainLength)
