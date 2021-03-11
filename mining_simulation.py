@@ -99,7 +99,9 @@ def Simulate(alpha,gamma,N, seed):
                 #print("honest miner found a block")
                 #The honest miners found a block.
                 #Others find a block (close the gap, lead drops to 1), the pool publishes its private branch and the system drops to a lead of 0
+                #Pool obtains revenue of two
                 ChainLength+=2
+                SelfishRevenue+=2
                 hidden=0
                 state=0
 
@@ -124,6 +126,7 @@ def Simulate(alpha,gamma,N, seed):
         #print("current: state= ", state, "// hidden= ", hidden, " // chain length", ChainLength, " // selfish revenue = ", SelfishRevenue)
         #print(" ------------------------------------------------------------------------------------- ")
 
+    print(N)
     #print(float(SelfishRevenue)/ChainLength)
     return float(SelfishRevenue)/ChainLength
 
