@@ -128,6 +128,7 @@ def Simulate(alpha,gamma,N, seed):
 
     print(N)
     #print(float(SelfishRevenue)/ChainLength)
+    print(alpha,gamma,N, seed)
     return float(SelfishRevenue)/ChainLength
 
 
