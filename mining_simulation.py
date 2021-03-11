@@ -29,6 +29,8 @@ def Simulate(alpha,gamma,N, seed):
     for i in range(N):
         r=random.random()
         if i < 11: print("ROUND", i)
+        if i < 11: print("before: state=", state, "// hidden=", hidden, " // chain length=", ChainLength, " // selfish revenue=", SelfishRevenue)
+
         if state==0: 
             #print("state 0")
             #The selfish pool has 0 hidden block.
@@ -123,7 +125,7 @@ def Simulate(alpha,gamma,N, seed):
                 SelfishRevenue+=1
                 state=2
 
-        if i < 11: print("current: state= ", state, "// hidden= ", hidden, " // chain length", ChainLength, " // selfish revenue = ", SelfishRevenue)
+        if i < 11: print("after: state=", state, "// hidden=", hidden, " // chain length=", ChainLength, " // selfish revenue=", SelfishRevenue)
         if i < 11: print(" ------------------------------------------------------------------------------------- ")
 
     print(N)
