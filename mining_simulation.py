@@ -99,7 +99,7 @@ def Simulate(alpha,gamma,N, seed):
                 hidden=3
                 state=3
             else:
-                print("honest miner found a block")
+                #print("honest miner found a block")
                 #The honest miners found a block.
                 #Others find a block (close the gap, lead drops to 1), the pool publishes its private branch and the system drops to a lead of 0
                 #Pool obtains revenue of two
