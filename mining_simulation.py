@@ -71,7 +71,7 @@ def Simulate(alpha,gamma,N, seed):
                 if i < 11: print("selfish pool found a block")
                 # Pool finds a block
                 # Pool publishes its secret branch of length 2. Pool obtains revenue of 2.
-                ChainLength+=1
+                ChainLength+=2
                 SelfishRevenue+=2
                 hidden=0
                 state=0
