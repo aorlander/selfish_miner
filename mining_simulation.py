@@ -70,7 +70,7 @@ def Simulate(alpha,gamma,N, seed):
                 #print("selfish pool found a block")
                 # Pool finds a block
                 # Pool publishes its secret branch of length 2. Pool obtains revenue of 2.
-                ChainLength+=2
+                ChainLength+=1
                 SelfishRevenue+=2
                 hidden=0
                 
