@@ -79,13 +79,12 @@ def Simulate(alpha,gamma,N, seed):
                 # Others find a block after pool head
                 # Pool and others each obtain revenue 1
                 ChainLength+=1
-                #SelfishRevenue+=1
+                SelfishRevenue+=1
             else:
                 #print("honest miner found a block after others' head")
                 # Others find a block after others' head
                 # Pool gets nothing and others obtain a revenue of 2
                 ChainLength+=1
-                SelfishRevenue+=1
             
             state=0
 
